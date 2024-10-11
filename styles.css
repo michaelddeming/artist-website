@@ -28,12 +28,15 @@ a:hover {
     top: 0;
     width: 100%;
     background: whitesmoke;
-    display: flex;
+    display: -webkit-box;     /* Safari */
+    display: -ms-flexbox;     /* IE10+ */
+    display: flex;            /* Modern browsers */
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     padding: 20px 50px;
     height: 80px;
+    box-sizing: border-box;   /* Ensure padding doesn’t affect height */
 }
 
 .navbar .logo {
