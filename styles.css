@@ -9,12 +9,13 @@
 
 body {
     background: whitesmoke;
+    padding-top: 80px;
 }
 
 a {
     color: rgb(50, 50, 50);
     text-decoration: none;
-    transition: color 0.3s; /* Smooth transition for links */
+    transition: color 0.3s;
 }
 
 a:hover {
@@ -60,6 +61,53 @@ a:hover {
     color: rgb(130, 130, 130);
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Hamburger icon styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Show mobile menu */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+}
+
+/* Other styles remain unchanged */
 .home {
     display: flex;
     justify-content: center;
@@ -124,6 +172,11 @@ button i {
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
+
+    body {
+        padding-top: 200px; /* Ensure the same padding for smaller screens */
+    }
+
     .home {
         flex-direction: column; /* Stack content vertically */
         text-align: center;
@@ -135,6 +188,19 @@ button i {
 
     .home-info .btn-sci {
         justify-content: center; /* Center buttons on smaller screens */
+    }
+    .navbar ul {
+        display: flex;
+        flex-direction: column; /* Stack the links vertically */
+        align-items: center; /* Center the links */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Add space between links */
+    }
+
+    .navbar a {
+        font-size: 18px; /* Adjust the font size for smaller screens */
     }
 }
 
