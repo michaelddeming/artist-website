@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: whitesmoke;
+}
+
+a {
+    color: rgb(50, 50, 50);
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for links */
+}
+
+a:hover {
+    color: rgb(130, 130, 130);
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    padding: 20px 50px;
+    height: 80px;
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: rgb(130, 130, 130);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of height */
+    padding: 60px;
+    padding-top: 100px;
+    color: rgb(50, 50, 50);
+    flex-wrap: wrap;
+    overflow: auto; /* Ensure scrolling is possible */
+}
+
+.home-info {
+    flex-basis: 50%; /* Allow the text to take up half of the space */
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.carousel {
+    flex: 1; /* Take up remaining space next to the text */
+    max-width: 500px; /* Optional: Limit the maximum width of the carousel */
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: opacity 0.5s ease-in-out; /* Fade effect for images */
+}
+
+.carousel img {
+    height: auto; /* Maintain image aspect ratio */
+    flex-shrink: 0; /* Prevents images from shrinking */
+    max-width: 100%; /* Make images scale to fit the container */
+    border-radius: 10px; /* Optional: Soft edges for images */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 10px; /* Adjust size of arrow icons */
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button i {
+    font-size: 25px; /* Adjust size of arrow icons */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+
+    .carousel {
+        max-width: 100%; /* Allow image to take up full width */
+    }
+
+    .home-info .btn-sci {
+        justify-content: center; /* Center buttons on smaller screens */
+    }
+}
+
+.home-info h1 {
+    font-size: 36px; /* Adjusted font size */
+    color: rgb(50, 50, 50);
+}
+
+.home-info h2 {
+    font-size: 25px;
+    font-style: italic;
+    color: rgb(50, 50, 50);
+}
+
+.home-info p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;    
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px; /* Consistent padding */
+    background: transparent;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 40px;
+    color: rgb(50, 50, 50);
+    font-weight: 600;
+    transition: .5s;
+}
+
+.home-info .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(50, 50, 50);
+    margin: 15px;
+    transition: .5s;
+}
+
+.home-info .btn-sci a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background on hover */
+    color: rgb(50, 50, 50);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.contact {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack the elements vertically */
+    height: 100vh; /* Take full viewport height */
+    padding: 60px;
+    color: rgb(50, 50, 50);
+    text-align: center; /* Center text within the contact section */
+    margin-top: 100px; /* Adjust this value as needed for spacing */
+}
+
+.contact-info {
+    max-width: 400px; /* Limit the width of the contact info section */
+    margin-bottom: 20px; /* Space below the contact info */
+}
+
+.contact-info h1 {
+    font-size: 36px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.contact-form {
+    flex: 1; /* Take up remaining space next to contact info */
+    display: flex;
+    flex-direction: column; /* Aligns form elements vertically */
+    width: 100%; /* Ensure the form takes the full width available */
+    max-width: 400px; /* Limit the width of the form */
+}
+
+.contact-form label {
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid rgb(40, 40, 40);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgb(40, 40, 40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.contact-form button:hover {
+    background: rgb(70, 70, 70);
+}
+
+.gallery {
+    padding-top: 100px; /* Adjust this value based on your navbar height */
+    text-align: center; /* Center the title */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Smaller gaps for better responsiveness */
+    max-width: 1000px; /* Max width of gallery */
+    margin: 0 auto; /* Center the gallery container */
+}
+
+.gallery-container img {
+    width: 100%; /* Make images fill the grid cell */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+}
+
+.about {
+    padding: 100px;
+    text-align: center;
+    background-color: whitesmoke;
+    color: rgb(50, 50, 50);
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Add focus state for accessibility */
+a:focus, button:focus {
+    outline: 2px solid rgb(130, 130, 130);
+    outline-offset: 2px;
+}
